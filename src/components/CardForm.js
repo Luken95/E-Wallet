@@ -7,9 +7,9 @@ function CardForm(props) {
     //på så vis kommer ui't uppdateras automatiskt när ändringar sker
 
     const [card, setCard] = useState({
-        cardnumber: null,
-        name: '',
-        valid: '',
+        cardNumber: '',
+        cardHolder: '',
+        validThru: '',
         ccv: '',
         vendor: ''
     })
@@ -25,25 +25,25 @@ function CardForm(props) {
     return (
         <section>
         <article id="cardid">
-            <p>{card.cardnumber}</p>
-            <p>{card.name}</p>
-            <p>{card.valid}</p>
+            <p>{card.cardNumber}</p>
+            <p>{card.cardHolder}</p>
+            <p>{card.validThru}</p>
             <p>{card.vendor}</p>
             <p>{card.ccv}</p>
         </article>
         <article>
             <div id="number">
                 <p>CARD NUMBER</p>
-                <input type="text" id="numberinput" onChange={(e) => setCard({...card, cardnumber: e.target.value})}></input>
+                <input type="text" id="numberinput" onChange={(e) => setCard({...card, cardNumber: e.target.value})}></input>
             </div>
             <div id="name">
                 <p>CARDHOLDER NAME</p>
-                <input type="text" id="nameinput" onChange={(e) => setCard({...card, name: e.target.value})}></input>
+                <input type="text" id="nameinput" onChange={(e) => setCard({...card, cardHolder: e.target.value})}></input>
             </div>
             <div id="validccv">
                 <div id="valid">
                     <p>VALID THRU</p>
-                    <input type="text" id="validinput" onChange={(e) => setCard({...card, valid: e.target.value})}></input>
+                    <input type="text" id="validinput" onChange={(e) => setCard({...card, validThru: e.target.value})}></input>
                 </div>
                 <div id="ccv">
                     <p>CCV</p>
