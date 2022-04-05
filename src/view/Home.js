@@ -10,16 +10,16 @@ function Home(props) {
     return (
         <div>
             <Top title="E-WALLET" />
-            <p>active cards</p>
+            <h6>ACTIVE</h6>
             {
                 props.cards.map((card, index) => (
                     <Card card={card} key={index} />
                 ))
             }
-            {/* 
-        <CardStack /> */}
+             
+      {/*   <CardStack />  */}
 
-            <Link to="/addcard"> <button type="button">ADD A NEW CARD</button></Link>
+            <Link to="/addcard"> <button className="button" type="button">ADD A NEW CARD</button></Link>
 
         </div>
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import chipLight from '../svgs/chip-light.svg';
+import chipDark from '../svgs/chip-dark.svg';
+import Bitcoin from '../svgs/vendor-bitcoin.svg';
+
 
 function CardForm(props) {
     const navigate = useNavigate()
-    //gör om denna till ett state istället
-    //på så vis kommer ui't uppdateras automatiskt när ändringar sker
-
     const [card, setCard] = useState({
         cardNumber: '',
         cardHolder: '',
@@ -14,24 +15,34 @@ function CardForm(props) {
         vendor: ''
     })
 
-
     function navigates() {
-        
         props.updateCards(card)
-        //navigate("/")
+    }
 
+    function handleChange(event) {
+        const { name, value } = event.target;
+        setCard(prevCard => {
+            return {
+                ...prevCard,
+                [name]: value
+            }
+        })
     }
 
     return (
         <section>
         <article id="cardid">
-            <p>{card.cardNumber}</p>
-            <p>{card.cardHolder}</p>
-            <p>{card.validThru}</p>
-            <p>{card.vendor}</p>
-            <p>{card.ccv}</p>
+            <input className="chipDark" type="image" src={ chipDark } alt="add"/>
+            <input className="Bitcoin" type="image" src={ Bitcoin } alt="add"/>
+            <p className='numberPlacement'>{card.cardNumber.length > 0? card.cardNumber : "XXXX XXXX XXXX XXXX" }</p>
+            <p className='holdernamePlacement'>CARDHOLDER NAME</p>
+            <p className='holderPlacement'>{card.cardHolder.length > 0? card.cardHolder : "FIRSTNAME LASTNAME"}</p>
+            <p className='validthruPlacement'>VALID THRU</p>
+            <p className='validPlacement'>{card.validThru.length > 0? card.validThru : "MM/YY"}</p>
+            <p className='vendorPlacement'>{card.vendor.length > 0? card.vendor : ""}</p>
         </article>
-        <article>
+
+        <section>
             <div id="number">
                 <p>CARD NUMBER</p>
                 <input type="text" id="numberinput" onChange={(e) => setCard({...card, cardNumber: e.target.value})}></input>
@@ -53,17 +64,17 @@ function CardForm(props) {
             <div id="vendor">
                 <p>VENDOR</p>
                 <select id="vendorinput" onChange={(e) => setCard({...card, vendor: e.target.value})}>
-                    <option value=""></option>
+                    <option value="" hidden></option>
                     <option value="BITCOIN INK" id="bitcoin">BITCOIN INK</option>
                     <option value="NINJA BANK" id="ninja">NINJA BANK</option>
                     <option value="BLOCK CHAIN INK" id="block">BLOCK CHAIN INK</option>
                     <option value="EVIL CORP" id="evil">EVIL CORP</option>
                 </select>
             </div>
-            <button onClick={navigates}>ADD CARD</button>
+            <button className="button" onClick={navigates}>ADD CARD</button>
 
             <br></br>
-        </article>
+        </section>
         </section>
     );
 

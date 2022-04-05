@@ -12,8 +12,6 @@ function AddCard(props) {
                 props.setCard([...cards, newCard]);
                 navigate('/');
         }
-        //useEffect kan ta två argument. Första är funktionen som skall köras
-        //andra är vilken ändring den skall lyssna på, i detta fall cards
         useEffect(() => {
                 console.log(props.cards);
         }, [props.cards])
@@ -21,7 +19,7 @@ function AddCard(props) {
         return (
                 <div>
                         <Top title="ADD A NEW BANK CARD" />
-                        <p>ADD NEW CARD</p>
+                        <h6>NEW CARD</h6>
                         <CardForm updateCards={updateCardsArray} />
                 </div>
 

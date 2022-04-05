@@ -12,7 +12,6 @@ function App() {
       <header className="App-header">
         <div>
           <Router>
-            {/*här lägger vi top.js sen tror jag*/}
             <Routes>
               <Route path="/" element={<Home cards={cards} />} />
               <Route path="/addCard" element={<AddCard cards={cards} setCard={setCards} />} />

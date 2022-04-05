@@ -1,19 +1,17 @@
 import Card from './Card';
 
-function CardStack (){
+function CardStack (props){
 
- 
+    const { cards, setCard } = props;
+
+    const cardComponent = cards.map((card, index) =>{
+        return <Card card={ card } key={ index } setCard={ setCard } />
+    })
+
     return(
-    <div>
-    <p>cardstack här under</p>
-    <Card />
-    
-    </div>
-
+        <section className="cardStack">
+            { cardComponent }
+        </section>
     );
-    
-    
-    
     }
-    
     export default CardStack
