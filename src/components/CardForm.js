@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import chipLight from '../svgs/chip-light.svg';
 import chipDark from '../svgs/chip-dark.svg';
 import Bitcoin from '../svgs/vendor-bitcoin.svg';
+import Ninja from '../svgs/vendor-ninja.svg';
+import Blockchain from '../svgs/vendor-blockchain.svg';
+import Evil from '../svgs/vendor-evil.svg';
 
 
 function CardForm(props) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const vendorImg = useRef(null);
+    const cardColor = useRef(null);
+/*  const  cssClass = useState(); */
+
     const [card, setCard] = useState({
         cardNumber: '',
         cardHolder: '',
@@ -28,12 +35,35 @@ function CardForm(props) {
             }
         })
     }
+    useEffect(() => {
+        if(card.vendor === "NINJA BANK"){
+            vendorImg.current.src = Ninja
+        }else if (card.vendor === "BLOCK CHAIN INK"){
+            vendorImg.current.src = Blockchain
+        }else if (card.vendor === "BITCOIN INK"){
+            vendorImg.current.src = Bitcoin
+        }else if (card.vendor === "EVIL CORP"){
+            vendorImg.current.src = Evil
+        }
+    }, [card])
+
+    useEffect(() => {
+        if(card.vendor === "NINJA BANK"){
+            cardColor.current.className = "Ninja"
+        }else if (card.vendor === "BLOCK CHAIN INK"){
+            cardColor.current.className = "Blockchain"
+        }else if (card.vendor === "BITCOIN INK"){
+            cardColor.current.className = "Bitcoin"
+        }else if (card.vendor === "EVIL CORP"){
+            cardColor.current.className = "Evil"
+        }
+    }, [card])
 
     return (
         <section>
-        <article id="cardid">
+        <article id="cardid" ref={ cardColor } className="emptycard">
             <input className="chipDark" type="image" src={ chipDark } alt="add"/>
-            <input className="Bitcoin" type="image" src={ Bitcoin } alt="add"/>
+            <input className="BitcoinPlacement" ref={vendorImg} type="image" src={ Bitcoin } alt="add"/>
             <p className='numberPlacement'>{card.cardNumber.length > 0? card.cardNumber : "XXXX XXXX XXXX XXXX" }</p>
             <p className='holdernamePlacement'>CARDHOLDER NAME</p>
             <p className='holderPlacement'>{card.cardHolder.length > 0? card.cardHolder : "FIRSTNAME LASTNAME"}</p>
@@ -65,10 +95,10 @@ function CardForm(props) {
                 <p>VENDOR</p>
                 <select id="vendorinput" onChange={(e) => setCard({...card, vendor: e.target.value})}>
                     <option value="" hidden></option>
-                    <option value="BITCOIN INK" id="bitcoin">BITCOIN INK</option>
-                    <option value="NINJA BANK" id="ninja">NINJA BANK</option>
-                    <option value="BLOCK CHAIN INK" id="block">BLOCK CHAIN INK</option>
-                    <option value="EVIL CORP" id="evil">EVIL CORP</option>
+                    <option className='Bitcoinink' value="BITCOIN INK" id="bitcoin">BITCOIN INK</option>
+                    <option className='Ninja' value="NINJA BANK" id="ninja">NINJA BANK</option>
+                    <option className='Blockchain' value="BLOCK CHAIN INK" id="block">BLOCK CHAIN INK</option>
+                    <option className='Evil' value="EVIL CORP" id="evil">EVIL CORP</option>
                 </select>
             </div>
             <button className="button" onClick={navigates}>ADD CARD</button>

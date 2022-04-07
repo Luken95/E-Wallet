@@ -2,10 +2,10 @@ import Card from './Card';
 
 function CardStack (props){
 
-    const { cards, setCard } = props;
+    const { cards, setCard} = props;
 
     const cardComponent = cards.map((card, index) =>{
-        return <Card card={ card } key={ index } setCard={ setCard } />
+        return <Card card={ card } key={ index }  setCard={ setCard } />
     })
 
     return(

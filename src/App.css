@@ -13,6 +13,28 @@ font-size:12px;
 font-family: monospace;
 }
 
+
+.Blockchain {
+  background-color: #7f51e3;
+}
+
+.Bitcoin {
+  background-color: #ffb444;
+}
+
+.Ninja {
+  background-color: #333333;
+  color: #bbbbbb;
+}
+
+.Evil {
+  background-color: #db2f4e;
+} 
+
+.emptycard{
+
+  background: linear-gradient(248.3deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 100%), #D0D0D0;
+}
 #cardid{
   width: 75%;
   position: relative;
@@ -20,7 +42,6 @@ font-family: monospace;
   height: 241px;
   margin: 10px auto;
 
-  background: linear-gradient(248.3deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 100%), #D0D0D0;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   align-items: center;
@@ -174,9 +195,11 @@ flex-direction: column;
   right: 310px;
 }
 
-/* .cardLogo */
+.vendorPlacement {
+  visibility: hidden;
+}
 
-.Bitcoin{
+.BitcoinPlacement{
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -186,25 +209,9 @@ flex-direction: column;
 }
 
 
-
-
-
-
-/* .Blockchain {
-  background-color: #7f51e3;
-}
-
-.Bitcoin {
-  background-color: #ffb444;
-}
-
-.Ninja {
-  background-color: #333333;
-  color: #bbbbbb;
-}
-
-.Evil {
-  background-color: #db2f4e;
+/* .Cardstacks{
+  display:grid;
+  grid-auto-rows: 2.6rem;
 } */
 
 

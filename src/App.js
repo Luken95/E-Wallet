@@ -9,17 +9,14 @@ function App() {
   const [cards, setCards] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
+    
           <Router>
             <Routes>
               <Route path="/" element={<Home cards={cards} />} />
               <Route path="/addCard" element={<AddCard cards={cards} setCard={setCards} />} />
             </Routes>
           </Router>
-        </div>
-
-      </header>
+  
     </div>
   );
 }

@@ -5,6 +5,7 @@ import CardStack from '../components/CardStack';
 
 
 function Home(props) {
+    const { cards } = props;
     console.log(props.cards);
 
     return (
@@ -16,11 +17,14 @@ function Home(props) {
                     <Card card={card} key={index} />
                 ))
             }
-             
-      {/*   <CardStack />  */}
+          <div className='Cardstacks'> 
+      <CardStack cards= {cards}/> 
+      </div>  
 
-            <Link to="/addcard"> <button className="button" type="button">ADD A NEW CARD</button></Link>
 
+      <div>
+        <Link to="/addcard"> <button className="button" type="button">ADD A NEW CARD</button></Link>
+        </div>  
         </div>
 
 

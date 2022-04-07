@@ -1,36 +1,6 @@
-import chipLight from '../svgs/chip-light.svg';
 import chipDark from '../svgs/chip-dark.svg';
-import Bitcoin from '../svgs/vendor-bitcoin.svg';
-import Blockchain from '../svgs/vendor-blockchain.svg';
-import Evil from '../svgs/vendor-evil.svg';
-import Ninja from '../svgs/vendor-ninja.svg';
 
 function Card({card}) {
-/*    const { setCard } = props;
-   var cardLogo, cardClass;
-
-
-   if (card.company === "bitcoin"){
-       cardLogo = Bitcoin
-       cardClass += "bitcoin"
-
-   } else if(card.company === "blockchain"){
-       cardLogo = Blockchain
-       cardClass += " blockchain"
-
-   } else if(card.company === "ninja") {
-       cardLogo = Ninja
-       cardClass += " ninja"
-
-   } else if(card.company === "evilcorp"){
-       cardLogo = Evil
-       cardClass += " evilcorp"
-
-   } else if(card.company === ""){
-       cardLogo = Bitcoin
-
-   } */
-
 
 
    return (
