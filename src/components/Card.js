@@ -4,7 +4,7 @@ function Card({card}) {
 
 
    return (
-      <article id="cardid">
+      <article id="cardid" className='homecolor'>
            <input className="chipDark" type="image" src={ chipDark } alt="add"/>
             <p className='numberPlacement'>{card.cardNumber.length > 0? card.cardNumber : "XXXX XXXX XXXX XXXX" }</p>
             <p className='holdernamePlacement'>CARDHOLDER NAME</p>
