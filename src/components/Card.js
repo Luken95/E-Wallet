@@ -1,10 +1,16 @@
 import { useEffect, useRef } from 'react';
 import chipDark from '../svgs/chip-dark.svg';
+import Bitcoin from '../svgs/vendor-bitcoin.svg';
+import Ninja from '../svgs/vendor-ninja.svg';
+import Blockchain from '../svgs/vendor-blockchain.svg';
+import Evil from '../svgs/vendor-evil.svg';
 
 function Card({ card, setActiveCard }) {
-console.log(card);
    const cardBG = useRef(null);
-   useEffect(() => {
+    const cardImg = useRef(null);
+
+   
+    useEffect(() => {
       if (card.vendor === "NINJA BANK") {
          cardBG.current.className = "Ninja"
       } else if (card.vendor === "BLOCK CHAIN INK") {
@@ -16,9 +22,21 @@ console.log(card);
       }
    }, [card])
 
+   useEffect(() => {
+    if (card.vendor === "NINJA BANK") {
+        cardImg.current.src = Ninja
+    } else if (card.vendor === "BLOCK CHAIN INK") {
+        cardImg.current.src = Blockchain
+    } else if (card.vendor === "BITCOIN INK") {
+        cardImg.current.src = Bitcoin
+    } else if (card.vendor === "EVIL CORP") {
+        cardImg.current.src = Evil
+    }
+}, [card])
+
    return (
       <article id="cardid" ref={cardBG} className='homecolor' onClick={() => setActiveCard(card)}>
-         <input className="chipDark" type="image" src={chipDark} alt="add" />
+         <input className="chipDark" type="image" src={chipDark} ref={cardImg} alt="add" />
          <p className='numberPlacement'>{card.cardNumber.length > 0 ? card.cardNumber : "XXXX XXXX XXXX XXXX"}</p>
          <p className='holdernamePlacement'>CARDHOLDER NAME</p>
          <p className='holderPlacement'>{card.cardHolder.length > 0 ? card.cardHolder : "FIRSTNAME LASTNAME"}</p>
