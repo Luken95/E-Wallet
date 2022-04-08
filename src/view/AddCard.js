@@ -10,6 +10,7 @@ function AddCard(props) {
         function updateCardsArray(newCard) {
                 let cards = props.cards;
                 props.setCard([...cards, newCard]);
+                props.setActiveCard(newCard);
                 navigate('/');
         }
         useEffect(() => {
