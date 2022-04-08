@@ -9,9 +9,12 @@ function CardStack (props){
     })
 
     return(
-        <section className="cardStack">
-            { cardComponent }
-        </section>
+
+          <section className="cardStack-component">
+    <section className="cardStack-section">
+    { cardComponent }
+    </section>
+    </section>
     );
     }
     export default CardStack

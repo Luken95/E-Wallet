@@ -121,18 +121,26 @@ flex-direction: column;
 }
 
 .button{
-  text-align: center;
-  align-items: right;
-  width: 382px;
+/*   width: 482px;
   height: 80px;
   left: 3.5%;
   bottom: 1.5%;
+  border-radius: 8px;
+  margin-top: 150px; */
+
+  margin-top: 30px;
+  padding: 15px 32px;
+  text-align: center;
+
+  display: inline-block;
+  font-size: 16px;
+
+  position: static;
+  width: 482px;
+  height: 80px;
+ /*  bottom: 1.5%; */
   border: 1px solid #000000;
   border-radius: 8px;
-  margin: auto;
-  margin-top: 35px;
-  font-weight: 500;
-
 }
 
 .numberPlacement {
@@ -207,15 +215,24 @@ flex-direction: column;
   right: 25px;
 }
 
-/* .homecolor{
-background-color: black;
-} */
+ .homecolor{
+background-color: #D0D0D0;
+} 
 
 
-/* .Cardstacks{
-  display:grid;
+.cardStack-component {
+  position: absolute;
+  top: 47%;
+  height:38.5%;
+  width:100%;
+  min-width: inherit;
+}
+
+.cardStack-section {
+  display: grid;
   grid-auto-rows: 2.6rem;
-} */
+}
+
 
 
 

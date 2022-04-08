@@ -17,8 +17,6 @@ function Home(props) {
             <div className='Cardstacks'>
                 <CardStack setActiveCard={setActiveCard} cards={cards} />
             </div>
-
-
             <div>
                 <Link to="/addcard"> <button className="button" type="button">ADD A NEW CARD</button></Link>
             </div>

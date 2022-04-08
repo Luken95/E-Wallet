@@ -36,7 +36,8 @@ function Card({ card, setActiveCard }) {
 
    return (
       <article id="cardid" ref={cardBG} className='homecolor' onClick={() => setActiveCard(card)}>
-         <input className="chipDark" type="image" src={chipDark} ref={cardImg} alt="add" />
+         <input className="chipDark" type="image" src={chipDark} alt="add" />
+         <input className="BitcoinPlacement" ref={cardImg}  type="image" src={Bitcoin} alt="add" />
          <p className='numberPlacement'>{card.cardNumber.length > 0 ? card.cardNumber : "XXXX XXXX XXXX XXXX"}</p>
          <p className='holdernamePlacement'>CARDHOLDER NAME</p>
          <p className='holderPlacement'>{card.cardHolder.length > 0 ? card.cardHolder : "FIRSTNAME LASTNAME"}</p>

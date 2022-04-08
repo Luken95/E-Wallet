@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import chipLight from '../svgs/chip-light.svg';
 import chipDark from '../svgs/chip-dark.svg';
 import Bitcoin from '../svgs/vendor-bitcoin.svg';
 import Ninja from '../svgs/vendor-ninja.svg';
