@@ -121,26 +121,17 @@ flex-direction: column;
 }
 
 .button{
-/*   width: 482px;
-  height: 80px;
-  left: 3.5%;
-  bottom: 1.5%;
-  border-radius: 8px;
-  margin-top: 150px; */
-
-  margin-top: 30px;
   padding: 15px 32px;
   text-align: center;
-
   display: inline-block;
   font-size: 16px;
-
-  position: static;
-  width: 482px;
+  width: 382px;
   height: 80px;
- /*  bottom: 1.5%; */
   border: 1px solid #000000;
   border-radius: 8px;
+  position: absolute;
+  right: 16.2px;
+  bottom: 0;
 }
 
 .numberPlacement {
@@ -217,6 +208,7 @@ flex-direction: column;
 
  .homecolor{
 background-color: #D0D0D0;
+display: none;
 } 
 
 

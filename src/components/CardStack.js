@@ -10,7 +10,7 @@ function CardStack (props){
 
     return(
 
-          <section className="cardStack-component">
+    <section className="cardStack-component">
     <section className="cardStack-section">
     { cardComponent }
     </section>
